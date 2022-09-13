@@ -2,6 +2,6 @@
 #include <string.h>
 
 
-short getInstruction();
+int getInstruction();
 PERSON readInput();
 void printPerson(PERSON);
