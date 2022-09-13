@@ -32,8 +32,8 @@ PERSON readInput(){
     short priority;
 
     scanf("%s", inName);
-    scanf("%d", age);
-    scanf("%d", priority);
+    scanf("%d", &age);
+    scanf("%d", &priority);
 
     strcpy(inputPerson.name, inName);
     inputPerson.age = age;
