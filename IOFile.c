@@ -29,7 +29,7 @@ PERSON readInput(){
     char* inName;
     inName = malloc( SIZENAME * sizeof(char));
     int age;
-    short priority;
+    int priority;
 
     scanf("%s", inName);
     scanf("%d", &age);
