@@ -22,8 +22,8 @@ void Penqueue(PQueue* pq , PERSON p){
         }
     }
 
-    printf("Penqueue has defined priority\nTrying to enqueue\n");
-    enqueue(&(pq->AllQueues[priorityIndex]), p);
+    printf("Penqueue has defined priority as %d\nTrying to enqueue\n", priorityIndex);
+    enqueue(pq->AllQueues[priorityIndex], p);
 }
 
 PERSON Pdequeue(PQueue*pq){
@@ -41,10 +41,11 @@ PERSON Pdequeue(PQueue*pq){
     return outP;
 }
 
-PQueue* startPQueue(PQueue* pq){
-    pq = malloc(1 * sizeof(PQueue));
+PQueue* nullstartPriorityQueue(){
+    PQueue* pq = malloc(1 * sizeof(PQueue));
+
     for(int i=0;i<4;i++){
-        pq->AllQueues[i] = startQueue(pq->AllQueues[i]);
+        pq->AllQueues[i] = NULL;
     }
 
     return pq;

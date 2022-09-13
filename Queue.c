@@ -2,18 +2,17 @@
 #include "Queue.h"
 
 // this function adds a person to the queue
-void enqueue(QUEUE** q, PERSON d){
+void enqueue(QUEUE* q, PERSON d){
     printf("enqueue has been called\n");
 
     printf("trying to get onto the while inside enqueue\n");
-    while( (*q)->nextElement != NULL){
+    while( q != NULL){
         printf("inside the while - going to nextElement\n");
-        *q = (*q)->nextElement;
+        q = q->nextElement;
     }
 
     printf("allocating the *q pointer that is NULL\n");
-    (*q)->data = d;
-    (*q)->nextElement = malloc(1 * sizeof(QUEUE));
+    q = newQueue(q, d);
     printf("end of enqueue function\n");
 
 }
@@ -38,12 +37,12 @@ int isEmpty(QUEUE*q){
     return flag;
 }
 
-QUEUE* startQueue(QUEUE*q){
+QUEUE* newQueue(QUEUE*q, PERSON p){
     q = malloc(1 * sizeof(QUEUE));
     q->nextElement = NULL;
-    q->data.age=-1;
-    q->data.priority = -1;
-    strcpy(q->data.name, "");
+    q->data.age= p.age;
+    q->data.priority = p.priority;
+    strcpy(q->data.name, p.name);
     return q;
 }
 

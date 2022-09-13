@@ -7,7 +7,7 @@
 
 int main(){
     PQueue* PriorityQueue;
-    startPQueue(PriorityQueue);
+    PriorityQueue = nullstartPriorityQueue();
     
     int N, instructionFlag;
     PERSON data;
@@ -20,6 +20,7 @@ int main(){
                 printf("main.c has switched the instructionFlag\n");
                 printf("Trying to Pdequeue\n");
                 data = Pdequeue(PriorityQueue);
+                printf("Pdequeue has finished and will print Person\n");
                 printPerson(data);
                 break;
             case 1: // flag for in (ENTRA)
