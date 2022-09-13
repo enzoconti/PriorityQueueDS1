@@ -9,3 +9,5 @@ typedef struct PriorityQueue{
 
 void Penqueue(PQueue*, PERSON);
 PERSON Pdequeue(PQueue*);
+
+#endif
