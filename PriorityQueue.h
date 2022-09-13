@@ -1,3 +1,6 @@
+ifndef "PriorityQueue.h"
+#define "PriorityQueue.h"
+
 #include "Queue.h"
 
 typedef struct PriorityQueue{
