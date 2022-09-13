@@ -44,8 +44,8 @@ PERSON readInput(){
 }
 
 void printPerson(PERSON p ){
-    if(p.age == -1) printf("FILA VAZIA\n"); // this is the flag for an empty queue, so we print this as a message in portuguese
+    if(p.age == -1) printf("\n\nFILA VAZIA\n\n"); // this is the flag for an empty queue, so we print this as a message in portuguese
     else{
-        printf("%s %d %d\n", p.name, p.age, p.priority); // output formatting
+        printf("\n\n%s %d %d\n\n", p.name, p.age, p.priority); // output formatting
     }
 }

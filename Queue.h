@@ -18,7 +18,7 @@ typedef struct queue{
     PERSON data;
 }QUEUE;
 
-void enqueue(QUEUE*,PERSON);
+QUEUE* enqueue(QUEUE*,PERSON);
 PERSON dequeue(QUEUE**);
 int isEmpty(QUEUE *q);
 QUEUE* newQueue(QUEUE*,PERSON);

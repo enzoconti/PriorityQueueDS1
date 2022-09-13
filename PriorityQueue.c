@@ -23,7 +23,15 @@ void Penqueue(PQueue* pq , PERSON p){
     }
 
     printf("Penqueue has defined priority as %d\nTrying to enqueue\n", priorityIndex);
-    enqueue(pq->AllQueues[priorityIndex], p);
+    pq->AllQueues[priorityIndex] = enqueue(pq->AllQueues[priorityIndex], p);
+    //enqueue(pq->AllQueues[priorityIndex], p);
+    printf("\n\nenqueue inside Penqueue has been sucessfull!\n pq has gotten this values:\n");
+    for(int i=0;i<4;i++){
+        printf("trying to print for the %dth time\n", i);
+        if(pq->AllQueues[i] != NULL){
+            printf("pq->AllQueues[%d]: ->data.age = %d \t ->data.priority = %d \t ->data.name = %s\n\n", i, pq->AllQueues[i]->data.age, pq->AllQueues[i]->data.priority, pq->AllQueues[i]->data.name);
+        }else printf("pq->AllQueues[%d] = NULL\n", i);
+    }
 }
 
 PERSON Pdequeue(PQueue*pq){
@@ -35,6 +43,7 @@ PERSON Pdequeue(PQueue*pq){
         if(isEmpty(pq->AllQueues[priorityIndex]) == 0){
             printf("inside de IF of Pdequeue - isEmpty has worked\n");
             outP = dequeue(&(pq->AllQueues[priorityIndex]));
+            break;
         }
     }
 
