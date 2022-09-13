@@ -22,7 +22,7 @@ void Penqueue(PQueue* pq , PERSON p){
         }
     }
 
-
+    printf("Penqueue has defined priority\nTrying to enqueue\n");
     enqueue(&(pq->AllQueues[priorityIndex]), p);
 }
 
@@ -33,9 +33,19 @@ PERSON Pdequeue(PQueue*pq){
     for(int priorityIndex = 0;priorityIndex<4;priorityIndex++){
 
         if(isEmpty(pq->AllQueues[priorityIndex]) == 0){
+            printf("inside de IF of Pdequeue - isEmpty has worked\n");
             outP = dequeue(&(pq->AllQueues[priorityIndex]));
         }
     }
 
     return outP;
+}
+
+PQueue* startPQueue(PQueue* pq){
+    pq = malloc(1 * sizeof(PQueue));
+    for(int i=0;i<4;i++){
+        pq->AllQueues[i] = startQueue(pq->AllQueues[i]);
+    }
+
+    return pq;
 }

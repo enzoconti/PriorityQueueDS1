@@ -11,5 +11,6 @@ typedef struct PriorityQueue{
 
 void Penqueue(PQueue*, PERSON);
 PERSON Pdequeue(PQueue*);
+PQueue* startPQueue(PQueue*);
 
 #endif

@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
 
 #define SIZENAME 100
 
@@ -21,5 +21,6 @@ typedef struct queue{
 void enqueue(QUEUE**,PERSON);
 PERSON dequeue(QUEUE**);
 int isEmpty(QUEUE *q);
+QUEUE* startQueue(QUEUE*);
 
 #endif
