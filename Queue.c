@@ -26,7 +26,8 @@ PERSON dequeue(QUEUE**q){
 
 int isEmpty(QUEUE*q){
     int flag;
-    q == NULL? flag=1: flag=0;
+    if(q == NULL) flag= 1;
+    else flag = 0;
 
     return flag;
 }
