@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "IOFile.h"
-#include "PriorityQueue.h"
+
 #include "Queue.h"
 
 // this function adds a person to the queue
