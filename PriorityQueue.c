@@ -1,16 +1,16 @@
 #include "PriorityQueue.h"
 
 void Penqueue(PQueue* pq , PERSON p){
-    sint priorityIndex;
+    int priorityIndex;
     if(p.age >= 60){
-        switch(p.priority)
+        switch(p.priority){
         case 0:
             priorityIndex = 2;
             break;
         case 1:
             priorityIndex = 0;
             break;
-    
+        }
     }else{
         switch(p.priority){
         case 0:
