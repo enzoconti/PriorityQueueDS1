@@ -1,5 +1,5 @@
-ifndef PriorityQueue.h
-#define PriorityQueue.h
+ifndef PriorityQueue_h
+#define PriorityQueue_h
 
 #include "Queue.h"
 
