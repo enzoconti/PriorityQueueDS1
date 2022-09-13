@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #define SIZENAME 100
 
-typedef struct person{
+typedef struct pessoa{
     char name[SIZENAME];
     int age;
     int priority; // this boolean represents if the person is in a priority group
