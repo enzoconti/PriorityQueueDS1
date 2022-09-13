@@ -1,4 +1,4 @@
-ifndef PriorityQueue_h
+#ifndef PriorityQueue_h
 #define PriorityQueue_h
 
 
