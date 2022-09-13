@@ -1,5 +1,5 @@
-#ifndef IOFile.h
-#define IOFile.h
+#ifndef IOFile_h
+#define IOFile_h
 
 #include "PriorityQueue.h"
 #include <string.h>
