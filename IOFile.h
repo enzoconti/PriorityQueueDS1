@@ -8,3 +8,5 @@
 int getInstruction();
 PERSON readInput();
 void printPerson(PERSON);
+
+#endif
