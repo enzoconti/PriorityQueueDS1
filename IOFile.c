@@ -1,6 +1,6 @@
 #include "IOFile.h"
 
-short getInstruction(){
+int getInstruction(){
     char *inputInstruction, *ENTRA, *SAI;
     PERSON p;
 
