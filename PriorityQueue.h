@@ -1,8 +1,8 @@
 #include "Queue.h"
 
 typedef struct PriorityQueue{
-    QUEUE *AllQueues[4] = {NULL, NULL,NULL,NULL};
+    QUEUE *AllQueues[4];
 }PQueue;
 
-Penqueue(PQueue*, PERSON);
-Pdequeue(PQueue*);
+void Penqueue(PQueue*, PERSON);
+PERSON Pdequeue(PQueue*);

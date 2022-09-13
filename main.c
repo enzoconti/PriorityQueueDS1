@@ -3,7 +3,7 @@
 #include "Queue.h"
 
 int main(){
-    PQueue* PriorityQueue;
+    PQueue* PriorityQueue = {0};
     int N, instructionFlag;
     PERSON data;
 

@@ -24,7 +24,10 @@ PERSON dequeue(QUEUE**q){
     return p;
 }
 
-void isEmpty(QUEUE*q){
-    q == NULL? return 1: return 0;
+short isEmpty(QUEUE*q){
+    short flag;
+    q == NULL? flag=1: flag 0;
+
+    return flag;
 }
 
