@@ -1,5 +1,5 @@
-#ifndef Queue.h
-#define Queue.h
+#ifndef Queue_h
+#define Queue_h
 
 #include <stdio.h>
 #include <stdlib.h>
