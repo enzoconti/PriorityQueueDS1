@@ -4,12 +4,12 @@ short getInstruction(){
     char *inputInstruction, *ENTRA, *SAI;
     PERSON p;
 
-    inputInstruction ynamicStack.c= malloc(6 * sizeof(char)); // hardcoded bc 5 is the maximum number of chars on the instructions (+ the null character '\0')
+    inputInstruction = malloc(6 * sizeof(char)); // hardcoded bc 5 is the maximum number of chars on the instructions (+ the null character '\0')
     // this two are the available instructions, meaning IN and OUT in portuguese(respectively)
     ENTRA = malloc(6 * sizeof(char)); 
     SAI = malloc(4 * sizeof(char));
     strcpy(ENTRA, "ENTRA");
-    strcpy(SAI "SAI");
+    strcpy(SAI, "SAI");
     // data input
     scanf("%s", inputInstruction);
 
@@ -35,7 +35,7 @@ PERSON readInput(){
     scanf("%d", age);
     scanf("%d", priority);
 
-    inputPerson.name = inName;
+    strcpy(inputPerson.name, inName);
     inputPerson.age = age;
     inputPerson.priority = priority;
 
