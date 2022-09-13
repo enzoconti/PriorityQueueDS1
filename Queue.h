@@ -1,3 +1,6 @@
+#ifndef "Queue.h"
+#define "Queue.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #define SIZENAME 100
