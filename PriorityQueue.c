@@ -1,4 +1,9 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "IOFile.h"
 #include "PriorityQueue.h"
+#include "Queue.h"
 
 void Penqueue(PQueue* pq , PERSON p){
     int priorityIndex;
