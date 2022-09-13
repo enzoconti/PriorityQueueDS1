@@ -5,7 +5,7 @@
 typedef struct person{
     char name[SIZENAME];
     int age;
-    short priority; // this boolean represents if the person is in a priority group
+    int priority; // this boolean represents if the person is in a priority group
 }PERSON;
 
 typedef struct queue{
@@ -15,4 +15,4 @@ typedef struct queue{
 
 void enqueue(QUEUE**,PERSON);
 PERSON dequeue(QUEUE**);
-short isEmpty(QUEUE*);
+int

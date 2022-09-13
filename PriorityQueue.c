@@ -1,7 +1,7 @@
 #include "PriorityQueue.h"
 
 void Penqueue(PQueue* pq , PERSON p){
-    short priorityIndex;
+    sint priorityIndex;
     if(p.age >= 60){
         switch(p.priority)
         case 0:
@@ -12,17 +12,18 @@ void Penqueue(PQueue* pq , PERSON p){
             break;
     
     }else{
-        switch(p.priority)
+        switch(p.priority){
         case 0:
             priorityIndex = 3;
             break;
         case 1:
             priorityIndex = 1;
             break;
+        }
     }
 
 
-    enqueue(pq->AllQueues[priorityIndex], p);
+    enqueue(&(pq->AllQueues[priorityIndex]), p);
 }
 
 PERSON Pdequeue(PQueue*pq){
@@ -32,7 +33,7 @@ PERSON Pdequeue(PQueue*pq){
     for(int priorityIndex = 0;priorityIndex<4;priorityIndex++){
 
         if(isEmpty(pq->AllQueues[priorityIndex]) == 0){
-            outP = dequeue(pq->AllQueues[priorityIndex])    
+            outP = dequeue(&(pq->AllQueues[priorityIndex]));
         }
     }
 

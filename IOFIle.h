@@ -1,7 +1,6 @@
-#include "PriorityQueue.h"
 #include <string.h>
+#include "PriorityQueue.h"
 
-
-short getInstruction();
+int getInstruction();
 PERSON readInput();
 void printPerson(PERSON);
