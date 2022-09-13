@@ -9,6 +9,7 @@ int main(){
     PQueue* PriorityQueue = {0};
     int N, instructionFlag;
     PERSON data;
+    scanf("%d", &N);
 
     for(int i=0;i<N;i++){
         instructionFlag = getInstruction();
