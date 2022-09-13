@@ -1,8 +1,6 @@
 #ifndef Queue_h
 #define Queue_h
 
-#include <stdio.h>
-#include <stdlib.h>
 #define SIZENAME 100
 
 typedef struct pessoa{
