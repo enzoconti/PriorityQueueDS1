@@ -16,7 +16,7 @@ int main(){
                 break;
             case 1: // flag for in (ENTRA)
                 data = readInput();
-                Penqueue(PQueue, data);
+                Penqueue(PriorityQueue, data);
                 break;
         }
     }
