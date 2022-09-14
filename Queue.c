@@ -60,6 +60,8 @@ QUEUE* newQueue(QUEUE*q, PERSON p){
     q->nextElement = NULL;
     q->data.age= p.age;
     q->data.priority = p.priority;
+    
+    q->data.name = malloc( (strlen(p.name) + 1) * sizeof(char));
     strcpy(q->data.name, p.name);
     printf("newQueue function is ending with q as: q->data.age = %d, q->data.prioritu = %d, 1->data.name = %s\n", q->data.age, q->data.priority, q->data.name);
     return q;

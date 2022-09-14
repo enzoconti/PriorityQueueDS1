@@ -10,5 +10,6 @@
 int getInstruction();
 PERSON readInput();
 void printPerson(PERSON);
+char* inputString();
 
 #endif

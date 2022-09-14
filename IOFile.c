@@ -16,10 +16,13 @@ int getInstruction(){
 
 
     if(!strcmp(ENTRA, inputInstruction)){
+        free(inputInstruction); free(ENTRA); free(SAI);
         return 1; // flag for in
     }else if(!strcmp(SAI, inputInstruction)){
+        free(inputInstruction); free(ENTRA); free(SAI);
         return 0; // flag for out
     }else{
+        free(inputInstruction); free(ENTRA); free(SAI);
         return -1; // flag for error
     }
 }
@@ -28,17 +31,21 @@ PERSON readInput(){
     PERSON inputPerson;
 
     char* inName;
-    inName = malloc( SIZENAME * sizeof(char));
     int age;
     int priority;
 
-    scanf("%s", inName);
+    printf("going into inputString\n");
+    inName = inputString();
+    printf("inputString ok\n");
     scanf("%d", &age);
     scanf("%d", &priority);
 
+    inputPerson.name = malloc( (strlen(inName)+1) * sizeof(char));
     strcpy(inputPerson.name, inName);
     inputPerson.age = age;
     inputPerson.priority = priority;
+
+    free(inName);
 
     return inputPerson;
 }
@@ -48,4 +55,14 @@ void printPerson(PERSON p ){
     else{
         printf("\n\n%s %d %d\n\n", p.name, p.age, p.priority); // output formatting
     }
+}
+
+char* inputString(){
+    char* name;
+    name = malloc(50 * sizeof(char));
+
+    scanf("%s", name);
+    name = realloc(name, (strlen(name) + 1) * sizeof(char));
+
+    return name;
 }

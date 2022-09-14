@@ -5,10 +5,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define SIZENAME 100
 
 typedef struct pessoa{
-    char name[SIZENAME];
+    char *name;
     int age;
     int priority; // this boolean represents if the person is in a priority group
 }PERSON;
