@@ -2,7 +2,7 @@
 
 void Penqueue(PQueue* pq , PERSON p){
     int priorityIndex;
-    if(p.age >= 60){
+    if(p.age >= 60){ // this first part only sets the priorityIndex accordingly
         switch(p.priority){
         case 0:
             priorityIndex = 2;
@@ -22,16 +22,7 @@ void Penqueue(PQueue* pq , PERSON p){
         }
     }
 
-    printf("Penqueue has defined priority as %d\nTrying to enqueue\n", priorityIndex);
-    pq->AllQueues[priorityIndex] = enqueue(pq->AllQueues[priorityIndex], p);
-    //enqueue(pq->AllQueues[priorityIndex], p);
-    printf("\n\nenqueue inside Penqueue has been sucessfull!\n pq has gotten this values:\n");
-    for(int i=0;i<4;i++){
-        printf("trying to print for the %dth time\n", i);
-        if(pq->AllQueues[i] != NULL){
-            printf("pq->AllQueues[%d]: ->data.age = %d \t ->data.priority = %d \t ->data.name = %s\n\n", i, pq->AllQueues[i]->data.age, pq->AllQueues[i]->data.priority, pq->AllQueues[i]->data.name);
-        }else printf("pq->AllQueues[%d] = NULL\n", i);
-    }
+    pq->AllQueues[priorityIndex] = enqueue(pq->AllQueues[priorityIndex], p); // we enqueue p on the proper queue accordingly to the priority index
 }
 
 PERSON Pdequeue(PQueue*pq){
@@ -41,7 +32,7 @@ PERSON Pdequeue(PQueue*pq){
     for(int priorityIndex = 0;priorityIndex<4;priorityIndex++){
 
         if(isEmpty(pq->AllQueues[priorityIndex]) == 0){
-            printf("inside de IF of Pdequeue - isEmpty has worked\n");
+            //# printf("inside de IF of Pdequeue - isEmpty has worked\n");
             outP = dequeue(&(pq->AllQueues[priorityIndex]));
             break;
         }
@@ -50,7 +41,7 @@ PERSON Pdequeue(PQueue*pq){
     return outP;
 }
 
-PQueue* nullstartPriorityQueue(){
+PQueue* nullstartPriorityQueue(){ // this simply starts the Queue and nulls everything(OOP inspired constructor)
     PQueue* pq = malloc(1 * sizeof(PQueue));
 
     for(int i=0;i<4;i++){

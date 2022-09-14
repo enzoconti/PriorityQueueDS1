@@ -3,6 +3,7 @@
 
 int getInstruction(){
     char *inputInstruction, *ENTRA, *SAI;
+    int flag;
     PERSON p;
 
     inputInstruction = malloc(6 * sizeof(char)); // hardcoded bc 5 is the maximum number of chars on the instructions (+ the null character '\0')
@@ -16,15 +17,20 @@ int getInstruction(){
 
 
     if(!strcmp(ENTRA, inputInstruction)){
-        free(inputInstruction); free(ENTRA); free(SAI);
-        return 1; // flag for in
+        
+        flag= 1; // flag for in
     }else if(!strcmp(SAI, inputInstruction)){
-        free(inputInstruction); free(ENTRA); free(SAI);
-        return 0; // flag for out
+        flag= 0; // flag for out
     }else{
-        free(inputInstruction); free(ENTRA); free(SAI);
-        return -1; // flag for error
+        flag =-1; // flag for error
     }
+
+    // freeing allocated heap memory
+    free(inputInstruction);
+    free(ENTRA);
+    free(SAI);
+
+    return flag;
 }
 
 PERSON readInput(){
@@ -34,9 +40,7 @@ PERSON readInput(){
     int age;
     int priority;
 
-    printf("going into inputString\n");
     inName = inputString();
-    printf("inputString ok\n");
     scanf("%d", &age);
     scanf("%d", &priority);
 
@@ -51,9 +55,9 @@ PERSON readInput(){
 }
 
 void printPerson(PERSON p ){
-    if(p.age == -1) printf("\n\nFILA VAZIA\n\n"); // this is the flag for an empty queue, so we print this as a message in portuguese
+    if(p.age == -1) printf("FILA VAZIA\n"); // this is the flag for an empty queue, so we print this as a message in portuguese
     else{
-        printf("\n\n%s %d %d\n\n", p.name, p.age, p.priority); // output formatting
+        printf("%s %d %d\n", p.name, p.age, p.priority); // output formatting
     }
 }
 

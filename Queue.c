@@ -3,40 +3,30 @@
 
 // this function adds a person to the queue
 QUEUE* enqueue(QUEUE* q, PERSON d){
-    printf("enqueue has been called\n");
     QUEUE* originalQ = q;
     
-    if( q == NULL) {
+    if( q == NULL) { // this is a special case: if the q is NULL we cannot return the original q, otherwise the function will have no effect
         q = newQueue(q,d); 
-        printf("base case function is ending with q as: q->data.age = %d, q->data.prioritu = %d, 1->data.name = %s\n", q->data.age, q->data.priority, q->data.name);
-        printf("base q = NULL case done \n"); 
         return q;
         }
 
-    printf("trying to get onto the while inside enqueue\n");
-    while( q->nextElement != NULL){
-        printf("inside the while - going to nextElement\n");
-        //earlierQ = q;
+    while( q->nextElement != NULL){ // the pointer q swipes through the queue
         q = q->nextElement;
     }
 
-    printf("swapping q with earlierQ\n");
-     QUEUE* earlierQ;
+
+     QUEUE* earlierQ; // this holds the last value on the queue
      earlierQ = q;
-     q = q->nextElement;
-     printf("allocating the *q pointer that is NULL\n");
+     q = q->nextElement; // this makes q receive the next value, NULL (the one 2 be added)
+     
      q = newQueue(q,d);
-     earlierQ->nextElement = q;
+     earlierQ->nextElement = q; // we make the last value point to the new allocated space for q
 
     
-    //q = newQueue(q, d);
-    printf("\n\nend of enqueue function\nq has gotten these values: q->data.age = %d \t q->data.priority = %d \t q->data.name = %s\n\n", q->data.age, q->data.priority, q->data.name);
-
-    return originalQ;
+    return originalQ; // we return the originalQ so that the queue keeps the same but with one more item
 }
 
 PERSON dequeue(QUEUE**q){
-    printf("dequeue has been called\n");
     PERSON p;
     QUEUE* start = *q;
 
@@ -55,7 +45,7 @@ int isEmpty(QUEUE*q){
     return flag;
 }
 
-QUEUE* newQueue(QUEUE*q, PERSON p){
+QUEUE* newQueue(QUEUE*q, PERSON p){ // this is a constructor(OOP inspired) function for queues
     q = malloc(1 * sizeof(QUEUE));
     q->nextElement = NULL;
     q->data.age= p.age;
@@ -63,7 +53,7 @@ QUEUE* newQueue(QUEUE*q, PERSON p){
     
     q->data.name = malloc( (strlen(p.name) + 1) * sizeof(char));
     strcpy(q->data.name, p.name);
-    printf("newQueue function is ending with q as: q->data.age = %d, q->data.prioritu = %d, 1->data.name = %s\n", q->data.age, q->data.priority, q->data.name);
+    
     return q;
 }
 
